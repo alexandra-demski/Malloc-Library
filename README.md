@@ -4,11 +4,11 @@ November 2020
 
 Alexandra Demski
 
-**https://github.com/alexandra-demski/Malloc-Library**
+[Github Deposit of the project](https://github.com/alexandra-demski/Malloc-Library)
 
 ## Generalities
 
-The main goal of the project is to implement my own dynamic allocation functions `malloc`, `free`, `calloc`, `realloc`which will use the systems calls in order to manipulate the program break limit.
+The main goal of the project is to implement my own dynamic allocation functions `malloc`, `free`, `calloc`, `realloc` which will use the systems calls in order to manipulate the program break limit.
 
 ```c
 int brk(void *addr);
@@ -29,11 +29,11 @@ void  free(void *ptr);
 void  print_stats();
 ```
 
-Each allocated block will incorporate a header with administrative informations necessary for an efficient `malloc` and a memory block used to actually store informations.
+Each allocated block will incorporate a header with administrative information necessary for an efficient `malloc` and a data space used to actually store informations.
 
 The allocation algorithm will, at first, search for a free and big enough memory block. If it succeeds, it will return the address of this zone and label the block as used. If it fails, it will create a new block using `sbrk`.
 
-With this minimalist implementation, deallocate memory ; the `free` function will only mark a block as unused.
+With this minimalist implementation, deallocating memory with the `free` function will only mark a block as unused.
 
 The debug tool `print_stats` will display useful information such as the number of allocated block, used and free ones, their size and the quantity of wasted memory space.
 
@@ -58,7 +58,7 @@ struct block {
 #define META_SIZE sizeof(struct block)
 ```
 
-It works as a linked list, each block will point to the next and the previous one. The first block in the list will be called first and because malloc wasn't called yet, it is initialized as `NULL`.
+It works as a linked list, each block will point to the next and the previous one. The first block in the list will be called `first` and because malloc wasn't called yet, it is initialized as `NULL`.
 
 ```c
 void *first = NULL;
