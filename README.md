@@ -4,7 +4,7 @@ November 2020
 
 Alexandra Demski
 
-[Github Deposit of the project](https://github.com/alexandra-demski/Malloc-Library)
+**[Github Deposit of the project](https://github.com/alexandra-demski/Malloc-Library)**
 
 ## Generalities
 
